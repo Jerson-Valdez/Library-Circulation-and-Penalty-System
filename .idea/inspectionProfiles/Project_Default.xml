@@ -1,0 +1,78 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="absl-py" />
+          <option value="annotated-types" />
+          <option value="anyio" />
+          <option value="asgiref" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="cryptography" />
+          <option value="deprecation" />
+          <option value="distlib" />
+          <option value="Django" />
+          <option value="django-cors-headers" />
+          <option value="django-stubs" />
+          <option value="django-stubs-ext" />
+          <option value="djangorestframework" />
+          <option value="djangorestframework-stubs" />
+          <option value="dotenv" />
+          <option value="et_xmlfile" />
+          <option value="filelock" />
+          <option value="gunicorn" />
+          <option value="h11" />
+          <option value="h2" />
+          <option value="hpack" />
+          <option value="httpcore" />
+          <option value="httpx" />
+          <option value="hyperframe" />
+          <option value="idna" />
+          <option value="immutabledict" />
+          <option value="joblib" />
+          <option value="multidict" />
+          <option value="narwhals" />
+          <option value="numpy" />
+          <option value="openpyxl" />
+          <option value="ortools" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pandas-stubs" />
+          <option value="pipenv" />
+          <option value="platformdirs" />
+          <option value="postgrest" />
+          <option value="propcache" />
+          <option value="protobuf" />
+          <option value="pycparser" />
+          <option value="pydantic" />
+          <option value="pydantic_core" />
+          <option value="PyJWT" />
+          <option value="python-dateutil" />
+          <option value="python-discovery" />
+          <option value="python-dotenv" />
+          <option value="realtime" />
+          <option value="scikit-learn" />
+          <option value="scipy" />
+          <option value="setuptools" />
+          <option value="six" />
+          <option value="sqlparse" />
+          <option value="storage3" />
+          <option value="StrEnum" />
+          <option value="supabase" />
+          <option value="supabase-auth" />
+          <option value="supabase-functions" />
+          <option value="threadpoolctl" />
+          <option value="types-PyYAML" />
+          <option value="typing-inspection" />
+          <option value="typing_extensions" />
+          <option value="tzdata" />
+          <option value="virtualenv" />
+          <option value="websockets" />
+          <option value="yarl" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
