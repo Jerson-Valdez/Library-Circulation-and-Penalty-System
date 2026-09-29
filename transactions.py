@@ -24,7 +24,8 @@ class Borrower:
         return self.__loan_history
 
     def can_borrow(self) -> bool:
-        return len(self.__loan_history) < self.__active_loan_limit
+        active_loans = sum(1 for loan in self.__loan_history if loan.status == "Active")
+        return active_loans < self.__active_loan_limit
 
     def __str__(self):
         return f"Borrower ID: {self.__borrower_id} | Name: {self.__name} | Active Loan Limit: {self.__active_loan_limit} | Loan History: {self.__loan_history}"

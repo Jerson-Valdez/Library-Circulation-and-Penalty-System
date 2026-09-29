@@ -54,7 +54,7 @@ class EBook(LibraryItem):
         self.__digital_rules = digital_rules
 
     @property
-    def digital_rules(self):
+    def digital_rules(self) -> str:
         return self.__digital_rules
 
     def get_loan_period(self) -> int:

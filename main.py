@@ -360,6 +360,9 @@ def register_item_menu(manager: LibraryManager):
 
             elif item == "4":
                 return
+            else:
+                print("Invalid choice!")
+                continue
         except LibraryException as e:
             print(e)
             print("Continue or return to main menu?")
