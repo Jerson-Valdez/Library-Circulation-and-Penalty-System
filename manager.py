@@ -98,6 +98,9 @@ class LibraryManager:
                     loan.item == item and
                     loan.status == "Active"):
 
+                if loan.renewal_count >= 2:
+                    raise LibraryException("Invalid Renewal: Item has reached the maximum renewal limit!")
+
                 loan.renew_item()
                 return
 
