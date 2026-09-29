@@ -24,7 +24,7 @@ class Borrower:
         return self.__loan_history
 
     def can_borrow(self) -> bool:
-        pass
+        return len(self.__loan_history) < self.__active_loan_limit
 
     def __str__(self):
         return f"Borrower ID: {self.__borrower_id} | Name: {self.__name} | Active Loan Limit: {self.__active_loan_limit} | Loan History: {self.__loan_history}"
@@ -55,10 +55,48 @@ class Loan:
         self.__penalty_amount = penalty_amount
 
     def process_return(self, return_day: int) -> None:
-        pass
+        self.__return_day = return_day
+
+        days_overdue = return_day - self.due_day
+        self.__penalty_amount = self.__item.calculate_penalty(days_overdue)
+
+        self.__status = "Returned"
 
     def renew_item(self) -> None:
-        pass
+        self.__due_day += self.__item.get_loan_period()
+        self.__renewal_count += 1
+
+    @property
+    def item(self) -> LibraryItem:
+        return self.__item
+
+    @property
+    def borrower(self) -> Borrower:
+        return self.__borrower
+
+    @property
+    def checkout_day(self) -> int:
+        return self.__checkout_day
+
+    @property
+    def due_day(self) -> int:
+        return self.__due_day
+
+    @property
+    def return_day(self) -> int:
+        return self.__return_day
+
+    @property
+    def renewal_count(self) -> int:
+        return self.__renewal_count
+
+    @property
+    def status(self) -> str:
+        return self.__status
+
+    @property
+    def penalty_amount(self) -> float:
+        return self.__penalty_amount
 
     def __str__(self):
-        return f"Item: {self.__item.title} | Borrower: {self.__borrower.name} | Checkout Day: {self.__checkout_day} | Due Day: {self.__due_day} | Return Day: {self.__return_day} | Renewal Count: {self.__renewal_count} | Status: {self.__status} | Penalty Amount: {self.__penalty_amount}"
+        return f"Item: {self.__item.title} | Borrower: {self.__borrower.name} | Checkout Day: {self.__checkout_day} | Due Day: {self.__due_day} | Return Day: {self.__return_day} | Renewal Count: {self.__renewal_count} | Status: {self.__status} | Penalty Amount: ${self.__penalty_amount}"
