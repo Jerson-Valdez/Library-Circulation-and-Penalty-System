@@ -6,6 +6,10 @@ class LibraryItem(ABC):
         self.__title = title
         self.__is_available = is_available
 
+    @abstractmethod
+    def get_resource_type(self) -> str:
+        pass
+
     @property
     def item_code(self) -> str:
         return self.__item_code
@@ -61,6 +65,9 @@ class EBook(LibraryItem):
             return float(days_overdue * 10.0)
         return 0.0
 
+    def get_resource_type(self) -> str:
+        return "EBook"
+
 
 """------------------------------------------------BOOK SUBCLASS-----------------------------------------------------"""
 
@@ -81,6 +88,9 @@ class Book(LibraryItem):
             return float(days_overdue * self.penalty_rate)
         return 0.0
 
+    def get_resource_type(self) -> str:
+        return "Book"
+
 """----------------------------------------------MAGAZINE SUBCLASS---------------------------------------------------"""
 
 class Magazine(LibraryItem):
@@ -99,3 +109,6 @@ class Magazine(LibraryItem):
         if days_overdue > 0:
             return float(days_overdue * self.penalty_rate)
         return 0.0
+
+    def get_resource_type(self) -> str:
+        return "Magazine"
