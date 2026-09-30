@@ -145,13 +145,12 @@ class LibraryManager:
 
                 available_items[resource_type].append(item)
 
-        active_loans = [
-            loan for loan in self.__loans if loan.status == "Active"
-        ]
+        active_loans = list(filter(lambda loan: loan.status == "Active", self.__loans))
 
-        overdue_loans = [
-            loan for loan in self.__loans if loan.status == "Active" and loan.due_day < current_day
-        ]
+        overdue_loans = list(filter(
+            lambda loan: loan.status == "Active" and loan.due_day < current_day,
+            self.__loans
+        ))
 
         penalties = {}
 

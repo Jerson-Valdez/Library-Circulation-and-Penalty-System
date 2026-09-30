@@ -392,10 +392,10 @@ def seed_data(manager: LibraryManager) -> None:
         EBook("E001", "Django Fundamentals", "Digital access only")
     )
 
-    manager.register_borrower(Borrower("BR001", "John"))
-    manager.register_borrower(Borrower("BR002", "Mary"))
-    manager.register_borrower(Borrower("BR003", "Alex"))
-    manager.register_borrower(Borrower("BR004", "Sarah"))
+    manager.register_borrower(Borrower("BR001", "Paul"))
+    manager.register_borrower(Borrower("BR002", "Jerson"))
+    manager.register_borrower(Borrower("BR003", "Ezra"))
+    manager.register_borrower(Borrower("BR004", "Adrianne"))
 
 if __name__ == "__main__":
     main()
